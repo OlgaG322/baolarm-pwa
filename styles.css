@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #2d4a22;
+    --secondary-color: #4a722d;
+    --accent-color: #ff6f61;
+    --text-color: #ffffff;
+    --bg-color: #1a365d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.time-display {
+    font-size: 2.8rem;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.time-picker {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.alarm-btn {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.sleep-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wake-btn {
+    background: var(--accent-color);
+    color: white;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.comment-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 120px;
+}
+
+.comment {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .time-display {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+    
+    .comment {
+        font-size: 1rem;
+    }
+}
