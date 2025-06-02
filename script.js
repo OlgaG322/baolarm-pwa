@@ -74,6 +74,24 @@ const phrases = {
     ]
 };
 
+const sarcasticButtonLabels = [
+    "В это время я притворюсь, что ложусь спать",
+    "Мой план: уснуть хотя бы к этому часу",
+    "Мечтаю заснуть к этому времени",
+    "Я обещаю себе лечь спать в это время (ха-ха)",
+    "Поставить несбыточный дедлайн для сна",
+    "Установить время для очередной неудачной попытки уснуть",
+    "Моя очередная попытка лечь пораньше",
+    "Буду в кровати... ну, типа",
+    "Я укажу время, а организм всё равно проигнорирует",
+    "Планирую заснуть к этому времени (но это не точно)",
+    "В это время я, возможно, уже буду считать овец",
+    "Попробую удивить себя и лечь спать вовремя",
+    "Установить время для вечерних самообманов",
+    "Поставить время, когда я должен был бы спать",
+    "Установить время для очередного провала сна"
+];
+
 let sleepStart = null;
 let alarmTime = null;
 const generalSound = new Audio('notification.mp3');
@@ -116,8 +134,13 @@ function showRandomGeneralComment() {
     document.getElementById('comment').textContent = getRandomPhrase('general');
 }
 
+function setRandomButtonLabel() {
+    const btn = document.getElementById('setAlarm');
+    btn.textContent = sarcasticButtonLabels[Math.floor(Math.random() * sarcasticButtonLabels.length)];
+}
+
 function startBackgroundChecks() {
-    // Уведомления каждую минуту (ранее было 5 минут)
+    // Уведомления каждую минуту (для теста)
     notificationInterval = setInterval(() => {
         if (Notification.permission === 'granted') {
             new Notification(getRandomPhrase('general'));
@@ -168,6 +191,7 @@ document.getElementById('setAlarm').addEventListener('click', () => {
     const [hours, minutes] = timeValue.split(':');
     const now = new Date();
     alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+    setRandomButtonLabel();
 });
 
 document.getElementById('sleepBtn').addEventListener('click', () => {
@@ -192,6 +216,7 @@ function initApp() {
     requestNotifications();
     showRandomGeneralComment();
     startBackgroundChecks();
+    setRandomButtonLabel();
 }
 
 // Инициализация приложения
