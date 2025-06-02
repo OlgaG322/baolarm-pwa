@@ -1,40 +1,40 @@
 :root {
-    --primary-color: #2d4a22;
-    --secondary-color: #4a722d;
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
     --accent-color: #ff6f61;
     --text-color: #ffffff;
-    --bg-color: #1a365d;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --bg-color: #1e3c72;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
     min-height: 100vh;
-    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    max-width: 100%;
+    max-width: 400px;
+    width: 100%;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px 10px;
+    background: var(--secondary-color);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
 header {
-    text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+    font-size: 2.2rem;
+    margin-bottom: 2px;
     color: var(--accent-color);
 }
 
@@ -44,108 +44,108 @@ h1 {
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 18px 0;
 }
 
 .time-display {
-    font-size: 2.8rem;
+    font-size: 2.1rem;
     font-family: 'Courier New', monospace;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .status {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--accent-color);
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin: 25px 0;
+    gap: 12px;
+    margin: 18px 0;
+    align-items: center;
 }
 
 .time-picker {
     width: 100%;
-    padding: 15px;
-    font-size: 1.2rem;
-    border: 2px solid var(--secondary-color);
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.15);
     color: var(--text-color);
 }
 
 .btn {
-    padding: 15px 25px;
+    width: 100%;
+    padding: 14px 0;
     border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
+    border-radius: 20px;
+    font-size: 1.07rem;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.btn:active {
-    transform: scale(0.95);
-}
-
-.alarm-btn {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.sleep-btn {
-    background: var(--primary-color);
-    color: white;
-}
-
-.wake-btn {
+    transition: background 0.3s, transform 0.2s;
     background: var(--accent-color);
     color: white;
 }
 
-.action-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+.btn:active {
+    background: #d94c4c;
+    transform: scale(0.98);
+}
+
+.alarm-btn {
+    background: var(--accent-color);
+}
+
+.sleep-btn {
+    background: var(--primary-color);
+}
+
+.sleep-btn:active {
+    background: #132a4a;
+}
+
+.wake-btn {
+    background: var(--secondary-color);
+}
+
+.wake-btn:active {
+    background: #183b6b;
 }
 
 .comment-container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    min-height: 120px;
+    background: rgba(255,255,255,0.13);
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 90px;
+    margin-top: 15px;
 }
 
 .comment {
-    font-size: 1.2rem;
+    font-size: 1.13rem;
     font-style: italic;
-    line-height: 1.4;
     text-align: center;
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 10px;
+        max-width: 98vw;
+        padding: 10px 2vw;
     }
-    
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
-    
     .time-display {
-        font-size: 2.2rem;
+        font-size: 1.4rem;
     }
-    
     .btn {
-        font-size: 1rem;
-        padding: 12px 20px;
+        font-size: 0.97rem;
+        padding: 11px 0;
     }
-    
     .comment {
         font-size: 1rem;
     }
